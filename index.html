@@ -5,12 +5,57 @@
     <title>Buscador con Múltiples Enlaces</title>
 </head>
 <body>
+  <style>
+    /* Estilos para centrar el botón en la pantalla */
+    .centrado {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<style>
+  /* Estilos para centrar el formulario y los resultados en la pantalla */
+  .centrado, #resultadosBusqueda {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%; /* Ajusta esto según prefieras */
+      text-align: center;
+  }
+  
+  /* Estilos para el formulario de búsqueda */
+  .centrado {
+      margin-top: -100px; /* Ajusta esto para posicionar el formulario más arriba */
+  }
+  
+  /* Estilos para los resultados de búsqueda */
+  #resultadosBusqueda {
+      margin-top: 50px; /* Ajusta esto para posicionar los resultados más abajo */
+  }
+</style>
+<style>
+  /* Estilos para añadir una imagen de fondo a toda la página */
+  body {
+      background-image: url('darling.jpg');
+      background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+      background-position: center; /* Centra la imagen en la página */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      background-attachment: fixed; /* La imagen de fondo es fija en relación con el área de visualización */
+  }
+</style>
 
+</head>
+<body>
+
+
+<div class="centrado">
 <form id="formularioBusqueda" onsubmit="buscar(event)">
   <input type="text" id="terminoBusqueda" placeholder="Buscar...">
   <button type="submit">Buscar</button>
 </form>
-
+</div>
 <div id="resultadosBusqueda"></div>
 
 <script>
