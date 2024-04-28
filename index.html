@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador con Múltiples Enlaces</title>
+</head>
+<body>
+
+<form id="formularioBusqueda" onsubmit="buscar(event)">
+  <input type="text" id="terminoBusqueda" placeholder="Buscar...">
+  <button type="submit">Buscar</button>
+</form>
+
+<div id="resultadosBusqueda"></div>
+
+<script>
+// Objeto para mapear términos de búsqueda a URLs
+var enlaces = {
+  'darling in the fraxx cap 1': 'https://www3.animeflv.net/ver/darling-in-the-franxx-1',
+  'darling in the fraxx cap 2': 'https://www3.animeflv.net/ver/darling-in-the-franxx-2',
+  'darling in the fraxx cap 3': 'https://www3.animeflv.net/ver/darling-in-the-franxx-3',
+  'darling in the fraxx cap 4': 'https://www3.animeflv.net/ver/darling-in-the-franxx-4',
+  'darling in the fraxx cap 5': 'https://www3.animeflv.net/ver/darling-in-the-franxx-5',
+  'darling in the fraxx cap 6': 'https://www3.animeflv.net/ver/darling-in-the-franxx-6',
+  'darling in the fraxx cap 7': 'https://www3.animeflv.net/ver/darling-in-the-franxx-7',
+  'darling in the fraxx cap 8': 'https://www3.animeflv.net/ver/darling-in-the-franxx-8',
+  'darling in the fraxx cap 9': 'https://www3.animeflv.net/ver/darling-in-the-franxx-9',
+  'darling in the fraxx cap 10': 'https://www3.animeflv.net/ver/darling-in-the-franxx-10',
+  'darling in the fraxx cap 11': 'https://www3.animeflv.net/ver/darling-in-the-franxx-11',
+  'darling in the fraxx cap 12': 'https://www3.animeflv.net/ver/darling-in-the-franxx-12',
+  'darling in the fraxx cap 13': 'https://www3.animeflv.net/ver/darling-in-the-franxx-13',
+  'darling in the fraxx cap 14': 'https://www3.animeflv.net/ver/darling-in-the-franxx-14',
+  'darling in the fraxx cap 15': 'https://www3.animeflv.net/ver/darling-in-the-franxx-15',
+  'darling in the fraxx cap 16': 'https://www3.animeflv.net/ver/darling-in-the-franxx-16',
+  'darling in the fraxx cap 17': 'https://www3.animeflv.net/ver/darling-in-the-franxx-17',
+  'darling in the fraxx cap 18': 'https://www3.animeflv.net/ver/darling-in-the-franxx-18',
+  'darling in the fraxx cap 19': 'https://www3.animeflv.net/ver/darling-in-the-franxx-19',
+  'darling in the fraxx cap 20': 'https://www3.animeflv.net/ver/darling-in-the-franxx-20',
+  'darling in the fraxx cap 21': 'https://www3.animeflv.net/ver/darling-in-the-franxx-21',
+  'darling in the fraxx cap 22': 'https://www3.animeflv.net/ver/darling-in-the-franxx-22',
+  'darling in the fraxx cap 23': 'https://www3.animeflv.net/ver/darling-in-the-franxx-23',
+  'darling in the fraxx cap 24': 'https://www3.animeflv.net/ver/darling-in-the-franxx-24',
+  // Puedes agregar más términos y enlaces aquí
+};
+
+// Función para buscar y crear enlaces basados en el término de búsqueda
+function buscar(e) {
+  e.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+  var termino = document.getElementById('terminoBusqueda').value.toLowerCase();
+  
+  // Comprobar si el término de búsqueda está en el objeto de enlaces
+  if(enlaces[termino]) {
+    document.getElementById('resultadosBusqueda').innerHTML = '<p>Resultado encontrado: <a href="' + enlaces[termino] + '">' + termino + '</a></p>';
+  } else {
+    document.getElementById('resultadosBusqueda').innerHTML = '<p>No se encontraron resultados para: ' + termino + '</p>';
+  }
+}
+</script>
+
+</body>
+</html>
