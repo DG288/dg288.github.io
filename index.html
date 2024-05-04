@@ -59,7 +59,13 @@
 <div id="resultadosBusqueda"></div>
 
 <script>
-// Objeto para mapear términos de búsqueda a URLs
+var enlaces = {};
+
+for (let i = 1; i <= 24; i++) {
+    enlaces['darling in the fraxx cap ' + i] = 'https://www3.animeflv.net/ver/darling-in-the-franxx-' + i;
+}
+
+/* // Objeto para mapear términos de búsqueda a URLs
 var enlaces = {
   'darling in the fraxx cap 1': 'https://www3.animeflv.net/ver/darling-in-the-franxx-1',
   'darling in the fraxx cap 2': 'https://www3.animeflv.net/ver/darling-in-the-franxx-2',
@@ -86,7 +92,7 @@ var enlaces = {
   'darling in the fraxx cap 23': 'https://www3.animeflv.net/ver/darling-in-the-franxx-23',
   'darling in the fraxx cap 24': 'https://www3.animeflv.net/ver/darling-in-the-franxx-24',
   // Puedes agregar más términos y enlaces aquí
-};
+}; */
 
 // Función para buscar y crear enlaces basados en el término de búsqueda
 function buscar(e) {
