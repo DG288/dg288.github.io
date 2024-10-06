@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserta tu Edad</title>
+    <style>
+        body {
+            background-image: url('polo.gif');
+            background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            color: white; /* Cambia el color de la letra a blanco */
+        }
+        .hidden {
+            display: none;
+        }
+        .error {
+            color: red;
+        }
+        #formulario, #pantallaEspecial {
+            text-align: center;
+        }
+        #pantallaEspecial img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="formulario">
+        <h1>Inserta tu Edad</h1>
+        <form id="edadForm">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="errorMensaje" class="error hidden">Por favor, intenta de nuevo. Debes ingresar el número 17.</p>
+    </div>
+    <div id="pantallaEspecial" class="hidden">
+        <strong><h1>Feliz cumpleaños hermano</h1></strong> <br>
+        <img src="pp.png" alt="">
+    </div>
+
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/J6zdaLV5KR8?autoplay=1&loop=1&playlist=J6zdaLV5KR8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <script>
+        document.getElementById('edadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+            const edad = document.getElementById('edad').value;
+            const errorMensaje = document.getElementById('errorMensaje');
+            if (edad == 17) {
+                document.getElementById('formulario').classList.add('hidden');
+                document.getElementById('pantallaEspecial').classList.remove('hidden');
+            } else {
+                errorMensaje.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
